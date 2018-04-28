@@ -11,7 +11,6 @@ podTemplate(label: 'jenkins-slave-pod',
         checkout scm
 
         // git url: 'https://github.com/hjue/jenkins-slaves.git'
-
         
         container('docker') {
           stage('Build blog project') {
