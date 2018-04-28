@@ -9,6 +9,7 @@ podTemplate(label: 'jenkins-slave-pod',
       stage('Get the jenkins-slave project') {
 
         checkout scm
+        
         // git url: 'https://github.com/hjue/jenkins-slaves.git'
 
         
