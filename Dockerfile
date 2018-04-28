@@ -1,3 +1,3 @@
-FROM registry-internal.cn-hangzhou.aliyuncs.com/gionee/java:8-serverjre
+FROM centos:7
 
 CMD ["java" ,"-version"]
