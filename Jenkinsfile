@@ -4,7 +4,7 @@ podTemplate(label: 'jenkins-slave-pod',
   ]
   ,volumes: [
      hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')
-  ]) {
+  ]){
     node ('jenkins-slave-pod') {
 
       stage('Get the jenkins-slave project') {
@@ -23,4 +23,5 @@ podTemplate(label: 'jenkins-slave-pod',
         container('docker') {
             stage 'build'
       }
-}
+    }
+  }
