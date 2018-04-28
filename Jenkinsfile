@@ -1,6 +1,11 @@
 podTemplate(label: 'jenkins-slave-pod',  
   containers: [
-    containerTemplate(name: 'docker', image: 'registry.cn-hangzhou.aliyuncs.com/spacexnice/jenkins-slave:latest', command: '', ttyEnabled: false)
+    containerTemplate(
+      name: 'docker', 
+      image: 'registry.cn-hangzhou.aliyuncs.com/google-containers/jnlp-slave:alpine',
+      command: '', 
+      ttyEnabled: false
+      )
   ]
   ,volumes: [
      hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')
@@ -8,8 +13,8 @@ podTemplate(label: 'jenkins-slave-pod',
     node ('jenkins-slave-pod') {
 
       stage('Get the jenkins-slave project') {
-  
-        git url: 'https://github.com/hjue/jenkins-slaves.git'
+        
+        checkout scm
         
         container('docker') {
           stage('Build blog project') {
