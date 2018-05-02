@@ -23,7 +23,7 @@ podTemplate(label: 'jenkins-slave-pod',
       stage('Build and push images!'){
         container('docker') {
             withDockerRegistry([credentialsId: '06897695-306c-4851-8585-a939473f1221', url: 'http://registry-internal.cn-hangzhou.aliyuncs.com']) {
-                sh "docker push registry-internal.cn-hangzhou.aliyuncs.com/gionee-projects/jenkins-slaves-java8:latest"
+                sh "docker push registry-internal.cn-hangzhou.aliyuncs.com/gionee-library/jenkins-slaves:latest"
             }
         }
       }
