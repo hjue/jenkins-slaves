@@ -15,7 +15,7 @@ podTemplate(label: 'jenkins-slave-pod',
         container('docker') {
           stage('Build blog project') {
     
-            sh "docker build -t registry-internal.cn-hangzhou.aliyuncs.com/gionee-projects/jenkins-slaves-java8:latest ."
+            sh "docker build -t registry-internal.cn-hangzhou.aliyuncs.com/gionee-library/jenkins-slaves:latest ."
           }
         }
       }
