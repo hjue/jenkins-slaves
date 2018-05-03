@@ -6,7 +6,8 @@ WORKDIR /opt
 
 RUN apt-get update && apt-get install zip
 
-ENV GRADLE_VERSION=3.5
+#ENV GRADLE_VERSION=3.5
+ENV GRADLE_VERSION=4.7
 
 # Installing it manually: https://gradle.org/install#manually
 RUN wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
